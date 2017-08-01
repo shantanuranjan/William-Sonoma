@@ -1,0 +1,71 @@
+<div class="container">
+    <div class="appron-search">
+        <div class="row">
+			<div class="col-sm-5">
+				<img src={{products[index].imageLarge}} style="" />
+				<div class="row">
+					<div class="col-sm-3" ng-repeat="p in products track by $index">
+						<appron-panel src="p.imageSmall" onmouseover="onmouseover($index)"/>
+					</div>
+				</div>
+			</div>
+            <div class="col-sm-7">
+				<h2>{{products[index].productName}}</h2>
+				<p>A generously sized apron is necessary in any kitchen, 
+					and ours will brighten yours with lively colors.Sewn of thick cotton, it can be personalized or 
+					monogrammed with upto nine characters, all the same embroidered in your choice of color.An
+					Apron of this quality is a welcome gift for any cook.</p>
+					
+				<ul>
+					<li>Durable 100% cotton construction</li>
+					<li>Adjustable neckband ensures a good fit</li>
+					<li>Roomy front pockets hold small tools</li>
+					<li>Machine wash</li>
+				</ul>
+				<div class="appron-price">{{products[index].price|currency}}</div>	
+				<div class="alert alert-danger" ng-show="hasError">
+					<strong>Please select quantity</strong> 
+				</div>
+				<div class="dropdown appron-qty">
+					<button class="btn btn-default dropdown-toggle" type="button" 
+						data-toggle="dropdown"> {{qty}}
+						<span class="caret"></span></button>
+							<ul class="dropdown-menu">
+								<li ng-repeat="value in [1,2,3]">
+									<a ng-click="updateQuantity(value)">{{value}}</a>
+								</li>
+							</ul>
+				</div>
+				<button type="button" class="btn btn-default appron-cart" 
+						data-toggle="modal" data-target="#myModal"	ng-click="openModal()">
+						<img src="images/button-add-to-cart.png" />						
+				</button>
+				<div>
+					<img src="images/arrow-expanded.png" />
+					<a type = "button" class = "btn " data-toggle = "collapse" data-target = "#expanded">
+						Expanded
+					</a>
+				<div>
+				<div id = "expanded" class = "collapse">
+				   This section is expanded.This section can be collapsed by clicking on the 
+				   expanded text.This section is expanded.This section can be collapsed by clicking on the 
+				   expanded text.  
+				</div>
+				<div>
+					<img src="images/arrow-expanded.png" />
+					<a type = "button" class = "btn " data-toggle = "collapse" data-target = "#collapse">
+						Collapsed
+					</a>
+				<div>
+				<div id = "collapse" class = "collapse">
+				   This section is expanded.This section can be collapsed by clicking on the 
+				   expanded text.This section is expanded.This section can be collapsed by clicking on the 
+				   expanded text.  
+				</div>
+				<div ng-show="showModal">
+					<appron-modal cart="addToCart"></appron-modal>
+				</div>
+            </div>
+        </div>
+    </div>
+</div>

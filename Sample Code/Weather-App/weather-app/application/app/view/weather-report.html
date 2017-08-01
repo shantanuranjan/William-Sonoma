@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="weather-search">
+        <div class="row">
+            <div class="col-sm-12">
+                <div>
+                    <form class="form-inline">
+                        <span class="btn-group" >
+                            <button ng-repeat="item in defaultLocations" ng-click="setLocation(item)" type="submit" class="btn btn-default">{{item}}</button>
+                        </span>
+                        <span class="form-group {{hasState}}">
+                            <label class="sr-only" for="location">City</label>
+                            <input ng-model="location" type="text" class="form-control" id="location" placeholder="City">
+                        </span>
+                        <button ng-click="getWeatherByLocation(location)" type="submit" class="btn btn-primary">Search!</button>
+                        <span ng-show="message" class="alert"><span class="glyphicon glyphicon-arrow-left">&nbsp;</span>{{message}}</span>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="weather-data" ng-show="true">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="">
+                    <h3>
+                        {{forecast.city.name}}, {{forecast.city.country}}
+                        <small>Lon: {{forecast.city.coord.lon | number:2}} Lat: {{forecast.city.coord.lat | number:2}} </small>
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <weather-panel forecast="forecast" list="forecast.list[0]"></weather-panel>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <weather-panel forecast="forecast" list="forecast.list[8]"></weather-panel>
+            </div>
+            <div class="col-sm-4">
+                <weather-panel forecast="forecast" list="forecast.list[16]"></weather-panel>
+            </div>
+            <div class="col-sm-4">
+                <weather-panel forecast="forecast" list="forecast.list[24]"></weather-panel>
+            </div>
+            <div class="col-sm-4">
+                <weather-panel forecast="forecast" list="forecast.list[32]"></weather-panel>
+            </div>
+        </div>
+    </div>
+</div>

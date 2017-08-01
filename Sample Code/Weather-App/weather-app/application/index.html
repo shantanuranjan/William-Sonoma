@@ -1,0 +1,45 @@
+ <!DOCTYPE html>
+<html  lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Weather App</title>
+ <!-- Style Sheets -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css" > 
+    <link rel="stylesheet" href="/css/style.css" > 
+   </head>
+   
+    <body ng-app="weatherApp">
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="navbar-header">
+        <a class="navbar-brand" ui-sref="home">Weather App</a>
+      </div>
+       <ul class="nav navbar-nav">
+        <li><a ui-sref="forecast">Forecast</a></li>
+    </ul>
+    </nav>
+    <div class="container">
+        <div ui-view></div>
+    </div>
+  </body>
+      <!--Library Scripts  -->
+<script src="/js/jquery-1.12.3.min.js"></script>
+<script src="/js/angular.js"></script>
+<script src="/js/angular-ui-router.js"></script>
+<script src="/js/bootstrap.js"></script>
+<script type="text/javascript" src="/node_modules/angular-google-gapi/dist/angular-google-gapi.js"></script>
+
+<!--Application Scripts -->
+<script src="/app/app.js"></script>
+
+<!-- Services -->
+<script src="/app/common/services/common.services.js"></script>
+<script src="/app/common/services/weather-service.js"></script>
+
+<!--Contact Controllers -->
+<script src="/app/view/weather-controller.js"></script>
+
+<script src="/app/view/weather-filter.js"></script>
+
+ <!-- Directives -->
+<script src="/app/view/weather-directive.js"></script>
+</html>

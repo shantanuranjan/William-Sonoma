@@ -1,0 +1,53 @@
+/* Styles go here */
+body {
+    padding-top: 0px;
+    padding-bottom: 180px;
+}
+
+.appron-logo {
+	display: block;
+    margin: 0 auto;
+}
+
+.appron-selection {
+	width: 100px;
+	height: 100px;
+	text-align: center;
+	border: 3px solid black;
+}
+
+.appron-price {
+	font-size: 18px;
+	font-weight: bold;
+	font-family: 'sans-serif',
+	margin: 10px 0px;
+}
+
+.appron-qty {
+	margin: 10px 0px;
+}
+
+.appron-cart {
+	margin: 10px 0px;
+	padding: 0px;
+}
+
+.appron-row-header {
+	font-size: 14px;
+	font-weight: bold;
+	font-family: 'sans-serif';
+	text-align: center;
+}
+
+.appron-row-body {
+	font-size: 14px;
+	font-family: 'sans-serif';
+	text-align: center;
+}
+
+.appron-footer {
+	margin: 60px 0px;
+	text-align: center;
+	padding: 20px 0px;
+	border-top: 1px solid black;
+}
