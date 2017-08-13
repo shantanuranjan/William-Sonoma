@@ -9,7 +9,7 @@ app.config(["$stateProvider","$urlRouterProvider", function($stateProvider, $url
         .state("appron", {
             url:"/appron",
             templateUrl:"app/view/appron-cart.html",
-            controller: "AppronCtrl"
+            controller: "AppronCtrl as vm"
         })
     }]);
 })();
